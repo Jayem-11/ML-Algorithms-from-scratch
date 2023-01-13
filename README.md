@@ -2,6 +2,8 @@
 
 # Linear Regression
 
+Consider the example below:
+
 | Living Area   | bedrooms      | Price(1000$) |
 | ------------- |:-------------:| -----:       |
 | 2400          | 3             |  400         |
@@ -12,8 +14,8 @@
 - Living area and bedrooms represents the input features - X's.  
 - Price is the output. - Y
 
-&nbsp; 
-  
+&nbsp;
+Think of the hypothesis as the function that maps input features(X) to the corresponding output(y)
 We can express the hypothesis as a sum of linear combinations of the features:
 
 $$h_θ (x)=θ_0+θ_1 x_1+θ_2 x_2$$
