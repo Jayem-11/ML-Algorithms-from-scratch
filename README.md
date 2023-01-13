@@ -169,7 +169,7 @@ $$\theta = (X^TX)^{-1}X^T\vec{y}$$
 
 ## 3.Probabilistic Interpretation
 
-$$ y^{(i)} = \theta^TX^{(i)} + \epsilon^{(i)} $$
+$$y^{(i)} = \theta^TX^{(i)} + \epsilon^{(i)}$$
 where $\epsilon$ random noise distributed normally with mean $0$ and variance $\sigma^{2}$
 
 
