@@ -16,12 +16,8 @@
   
 We can express the hypothesis as a sum of linear combinations of the features:
 
-
 $$h_θ (x)=θ_0+θ_1 x_1+θ_2 x_2$$
-
-  
-  
-
+    
 **where $θ$ are the parameters(Weights)**
 &nbsp;  
 
@@ -94,10 +90,10 @@ $$\theta := \theta - \alpha \sum\limits_{i=1}^{n}(y^{(i)} - h_\theta(x^{(i)})).x
 
 Loop{  
 
-&nbsp; for $i = 1$ to $n$,&nbsp;{$$ \theta_j := \theta_j + \alpha (y^{(i)} - h_\theta(x^{(i)})).x_j^{(i)}),(For Every j)$$ &nbsp;  }  
-
+&nbsp; for $i = 1$ to $n$,&nbsp;{ $$\theta_j := \theta_j + \alpha (y^{(i)} - h_\theta(x^{(i)})).x_j^{(i)}), (For Every j)$$ 
+&nbsp;  }  
 }
- 
+
 In a more succint way:
 
 
@@ -154,18 +150,18 @@ X\theta - \vec{y} =
     
 - The cost function is given by:  
 $$J(θ) = {1 \over 2} \sum\limits_{i=1}^{n}(h_θ(x)^{(i)} - y^{(i)})^2 $$
-$ Since:  z^{T}z = z^2$  $and$ $h_θ(x) = X\theta $, we have :
-$$ J(θ) = {1 \over 2} (X\theta - \vec{y})^{T}(X\theta - \vec{y}) $$
+$Since:  z^{T}z = z^2$  $and$ $h_θ(x) = X\theta$, we have :
+$$J(θ) = {1 \over 2} (X\theta - \vec{y})^{T}(X\theta - \vec{y})$$
  
-$$ \nabla_\theta J(\theta) = \nabla_\theta {1 \over 2} (X\theta - \vec{y})^{T}(X\theta - \vec{y})$$
-$$ \nabla_\theta {1 \over 2} (X\theta)^TX\theta - (X\theta)^T\vec{y} - \vec{y}(X\theta)+ \vec{y}^T\vec{y}$$
+$$\nabla_\theta J(\theta) = \nabla_\theta {1 \over 2} (X\theta - \vec{y})^{T}(X\theta - \vec{y})$$
+$$\nabla_\theta {1 \over 2} (X\theta)^TX\theta - (X\theta)^T\vec{y} - \vec{y}(X\theta)+ \vec{y}^T\vec{y}$$
 $Since: \vec{y}^T(X\theta) = (X\theta)^T\vec{y}$, we have :
-$$ \nabla_\theta {1 \over 2} \theta^T (X^TX)\theta - 2\theta^T(X^T\vec{y}) + \vec{y}^T\vec{y} $$
+$$\nabla_\theta {1 \over 2} \theta^T (X^TX)\theta - 2\theta^T(X^T\vec{y}) + \vec{y}^T\vec{y} $$
 $Since: \nabla_xx^TAx = 2Ax$, we have :
 $$ {1 \over 2}(2X^TX\theta - 2X^T\vec{y}) $$
 
 - To find minima
-$$ X^TX\theta - X^T\vec{y} = 0 $$
+$$X^TX\theta - X^T\vec{y} = 0$$
 $$X^TX\theta = X^T\vec{y}$$  
 - Therefore the value of $\theta$ that minimizes $J(\theta)$ is given in closed form by the equaton below:
 $$\theta = (X^TX)^{-1}X^T\vec{y}$$
