@@ -137,8 +137,10 @@ def grad_d(x,y,theta,alpha=0.1 ,epochs=10):
 ## 2.The Normal Equation
 
 Apart from Gradient Desscent, We can be able to find the closed form solution of $\theta$ that minimizes $J(\theta)$  
-- From the training sert we can define a design matrix $X$ such that:
-$$ X =
+- From the training set we can define a design matrix $X$ such that:  
+
+$$
+X =
 	\begin{bmatrix} 
 	x^{(1)T} \\
 	x^{(2)T} \\
@@ -148,7 +150,7 @@ $$ X =
     x^{(n)T} \\
 	\end{bmatrix}
 	\quad
-	$$
+$$
 
 - From the target values:
 
@@ -351,4 +353,7 @@ print("Price of house: ", result_normal[0])
 
 
 ```
+### output
+
+![screenshot](https://github.com/Jayem-11/ML-Algorithms-from-scratch/blob/main/Linear_regression/Screenshot%20(549).png)
 
