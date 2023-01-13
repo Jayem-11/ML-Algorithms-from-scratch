@@ -89,7 +89,9 @@ For more than one example:
 
 &nbsp;  
 
-Repeat until convergence{$$\theta_j := \theta_j - \alpha \sum\limits_{i=1}^{n}(y^{(i)} - h_\theta(x^{(i)})).x_j^{(i)}),(For Every j)$$}
+Repeat until convergence{
+$$\theta_j := \theta_j - \alpha \sum\limits_{i=1}^{n}(y^{(i)} - h_\theta(x^{(i)})).x_j^{(i)}),(For Every j)$$
+}
 
 
 In a more succint way:
