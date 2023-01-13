@@ -19,6 +19,12 @@ Think of the hypothesis as the function that maps input features(X) to the corre
 We can express the hypothesis as a sum of linear combinations of the features:
 
 $$h_θ (x)=θ_0+θ_1 x_1+θ_2 x_2$$
+```
+def hypo(x, theta):
+    return np.matmul(x, theta)
+    
+```
+
     
 **where $θ$ are the parameters(Weights)**
 &nbsp;  
@@ -37,6 +43,10 @@ $$J(θ) = {1 \over 2n} \sum\limits_{i=1}^{n}(h_θ(x)^{(i)} - y^{(i)})^2 $$
 where n is the number of sampled data  
 
 ** i.e. cost function is the sum of losses from the loss function **
+```
+def cost_fn(x,y, theta):
+    return (hypo(x, theta) - y).T@(hypo(x, theta) - y)/(2*x.shape[0])
+```
 
 ## 1.LMS Algorithm
 &nbsp;  
@@ -106,6 +116,22 @@ $$\theta := \theta + \alpha (y^{(i)} - h_\theta(x^{(i)})).x^{(i)})$$
 - Gradient Descent is computed with a single training sample i.e. k is uniformly sampled at random for entire training set
 
 
+```
+def grad_d(x,y,theta,alpha=0.1 ,epochs=10):
+    m = x.shape[0]
+    cost = []
+    
+    for i in range(epochs):
+        h_x   = hypo(x , theta)
+        error = (1/m)*(x.T@(h_x - y))
+        theta = theta - (alpha)*error
+        cost.append(cost_fn(x,y,theta))
+    
+    return theta , cost
+     
+```
+
+
 ## 2.The Normal Equation
 
 Apart from Gradient Desscent, We can be able to find the closed form solution of $\theta$ that minimizes $J(\theta)$  
@@ -167,7 +193,11 @@ $$X^TX\theta - X^T\vec{y} = 0$$
 $$X^TX\theta = X^T\vec{y}$$  
 - Therefore the value of $\theta$ that minimizes $J(\theta)$ is given in closed form by the equaton below:
 $$\theta = (X^TX)^{-1}X^T\vec{y}$$
+```
 
+theta_normal = (np.linalg.inv(x.T@x))@(x.T)@(y)
+
+```
 
 ## 3.Probabilistic Interpretation
 
@@ -199,3 +229,7 @@ $$ {\boldsymbol\ell}(\theta) = nK - {1\over\sigma^2} \left[ \sum\limits_{i=1}^n 
 - Maximimizing the log likelihood minimizes the loss.
 
 $$argmax\; {\boldsymbol\ell}(\theta) = argmin\; J(\theta) $$
+
+## The Code
+
+
